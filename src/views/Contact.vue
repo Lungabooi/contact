@@ -11,11 +11,14 @@
             filled
             label="Add contact"
             append-icon="mdi-account-plus"
-          hide-details
-          clearabl 
-          v-model="newContact"
-          @click:append>
+            hide-details
+            clearable
+            v-model="newContact"
+            @click:append="addContact"
+            @keyup.enter="addContact"
+           >
          </v-text-field>
+         
        
         <v-list-item v-for="contact in contacts" :key="contact.id">
           <template v-slot:default="{ active, }">
@@ -36,7 +39,7 @@
              <v-list-item-action>
           <v-btn icon
           @click="deleteContact(contact.id)">
-            <v-icon color="grey lighten-1">mdi-delete</v-icon>
+            <v-icon color="red">mdi-delete</v-icon>
           </v-btn>
         </v-list-item-action>
           </template>
@@ -55,36 +58,47 @@
       return{
         newContact:"",
         contacts:[
-          {
-          id: 1,
-          name:"Lunga",
-          number: "0826738289"
-        },
-        {
-          id: 2,
-          name:"Philani",
-          number: "0767677219"
-        },
-        {
-          id: 3,
-          name:"Sindile",
-          number: "0612998402"
+        //   {
+        //   id: "",
+        //   name:""
+        // },
+        // {
+        //   id: 2,
+        //   name:"Philani",
+        //   number: "0767677219"
+        // },
+        // {
+        //   id: 3,
+        //   name:"Sindile",
+        //   number: "0612998402"
 
-        }
+        // }
       ]
       }
     },
     methods:{
       deleteContact(id){
-        this.contacts= this.contacts.filter(contact =>
+        this.contacts = this.contacts.filter(contact =>
         contact.id !== id)
       },
       addContact(){
-        let newContact ={
+        let newContact = {
           id: Date.now(),
-          title: this.newContactTitle
+          name: this.newContact
         }
-      }
+        this.contacts.push(newContact),
+        localStorage.name = this.name;
+        console.log('now pretend I did more stuff...')
+      },
+     
+    },
+    mounted() {
+    if(localStorage.name) this.name = localStorage.name;
+  },
+  watch:{
+    name(newName) {
+      localStorage.name = newName;
     }
+  }
   }
 </script>
