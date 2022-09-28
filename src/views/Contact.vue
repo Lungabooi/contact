@@ -1,12 +1,10 @@
 <template>
-  
+  <div class="pa-0">
   <v-list
       subheader
       two-line
       flat
-      class="pt-0"
     >
-    <div>
       <v-text-field
             filled
             label="Add contact"
@@ -47,9 +45,10 @@
         </v-list-item>
         
 
-      </div>
+     
 
     </v-list>
+  </div>
 </template>
 <script>
 

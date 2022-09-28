@@ -39,7 +39,7 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Contact App</v-toolbar-title>
+      <v-toolbar-title>Stay Connected</v-toolbar-title>
     </v-app-bar>
     
     <!-- App bar -->
@@ -50,6 +50,7 @@
       src="https://picsum.photos/1920/1080?random"
       app
       prominent
+
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -60,7 +61,7 @@
 
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Contact App</v-app-bar-title>
+      <v-app-bar-title>App</v-app-bar-title>
 
       <v-spacer></v-spacer>
 
