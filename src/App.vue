@@ -66,7 +66,7 @@
       <v-spacer></v-spacer>
 
       <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
+        <v-icon>mdi-phone</v-icon>
       </v-btn>
 
       <v-btn icon>
@@ -74,7 +74,7 @@
       </v-btn>
 
       <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
+        <v-icon>mdi-account-reactivate</v-icon>
       </v-btn>
     </v-app-bar>
 
